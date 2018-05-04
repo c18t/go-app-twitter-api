@@ -1,2 +1,33 @@
-# go-app-twitter-api
-Gatapi - Go App::Twitter:API (for study)
+# Gatapi - Go Application for Twitter API. (for study)
+
+Gatapi(がたぴ /ɡä täˈpʲi̞/)は、Goの練習に作成したTwitter　APIクライアントです。  
+何が起きても知らないですけど、ご利用はお好きにどうぞ。
+
+## Usage
+```sh
+$ gatapi -h
+Gatapi - Go Application for Twitter API. (for study)
+
+Usage:
+  gatapi (say | tweet) <message> [--to <screen name>] [--id <tweet id>]
+  gatapi (rt | retweet) (<tweet id> | --id <tweet id>)
+  gatapi (qt | quote) <message> [--id <tweet id>]
+  gatapi (f | like) (<tweet id> | --id <tweet id>)
+
+  gatapi show (profile | tweet | favorite | friend | follower | list | listed ) [screen name] [-p | --page <n..m>] [-l | -limit <count>]
+  gatapi (list-member | list-subscriber) <screen name>'/'<list-slug> [-p | --page <n..m>] [-l | -limit <count>]
+
+  gatapi (-h | --help)
+  gatapi (-v | --version)
+
+Options:
+  -h --help                       Show this screen.
+  -v --version                    Show version.
+```
+
+## License
+[WTFPL](./LICENSE)
+
+## Auther
+Uchi (/ɯ̹t͡ɕʲi/)
+  - Twitter: [@c18t](https://twitter.com/c18t)
