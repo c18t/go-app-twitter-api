@@ -31,6 +31,6 @@ Not yet.
 ## License
 [WTFPL](./LICENSE)
 
-## Auther
+## Author
 Uchi (/ɯ̹t͡ɕʲi/)
   - Twitter: [@c18t](https://twitter.com/c18t)
