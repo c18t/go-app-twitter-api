@@ -4,8 +4,8 @@
 [[projects]]
   name = "github.com/BurntSushi/toml"
   packages = ["."]
-  revision = "b26d9c308763d68093482582cea63d69be07a0f0"
-  version = "v0.3.0"
+  revision = "3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005"
+  version = "v0.3.1"
 
 [[projects]]
   name = "github.com/cenkalti/backoff"
@@ -17,7 +17,7 @@
   branch = "master"
   name = "github.com/dghubble/go-twitter"
   packages = ["twitter"]
-  revision = "c4115fa44a928413e0b857e0eb47376ffde3a61a"
+  revision = "a34e9059cd58e96429cee9c8a87fd8d907da6843"
 
 [[projects]]
   name = "github.com/dghubble/oauth1"
@@ -32,26 +32,26 @@
   version = "v1.1.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/google/go-querystring"
   packages = ["query"]
-  revision = "53e6ce116135b80d037921a7fdd5138cf32d7a8a"
+  revision = "44c6ddd0a2342c386950e880b658017258da92fc"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/mitchellh/go-homedir"
   packages = ["."]
-  revision = "b8bc1bf767474819792c23f32d8286a45736f1c6"
+  revision = "ae18d6b8b3205b561c79e8e5f69bff09736185f4"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context"]
-  revision = "640f4622ab692b87c2f3a94265e6f579fe38263d"
+  revision = "4dfa2610cdf3b287375bbba5b8f2a14d3b01d8de"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3ffadf573a66786f85f85208e562c6cca28988635c09b21cc37b36d3155e5b4b"
+  inputs-digest = "f2d2dcee73248d1d9fc01c50c521beab5be5b5f2fc2ef82b9690882f9bd2302c"
   solver-name = "gps-cdcl"
   solver-version = 1

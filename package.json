@@ -1,0 +1,14 @@
+{
+  "name": "go-app-twitter-api",
+  "repository": "ssh://git@github.com/c18t/go-app-twitter-api.git",
+  "author": "鵜巷 <u@chimata.org>",
+  "license": "WTFPL",
+  "scripts": {
+    "doc:install": "gitbook install ./doc",
+    "doc": "gitbook serve ./doc --open",
+    "pdf": "gitbook pdf ./doc ./doc/book.pdf"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

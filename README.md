@@ -26,11 +26,14 @@ Options:
 ```
 
 ## Install
-Not yet.
+```sh
+$ go get -u github.com/c18t/go-app-twitter-api/cmd/gatapi
+```
 
 ## License
 [WTFPL](./LICENSE)
 
 ## Author
 Uchi (/ɯ̹t͡ɕʲi/)
+  - GitHub: [c18t](http://github.com/c18t)
   - Twitter: [@c18t](https://twitter.com/c18t)

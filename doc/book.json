@@ -1,0 +1,41 @@
+{
+  "title": "Gatapi (Go Application for Twitter API) Documentation",
+  "description": "Gatapiのドキュメントです。",
+  "author": "Uchi (/ɯ̹t͡ɕʲi/) <u@chimata.org>",
+  "language": "ja",
+
+  "pdf": {
+    "pageNumbers": true,
+    "fontSize": 14,
+    "fontFamily": "Meiryo",
+    "paperSize": "a4",
+    "margin": {
+      "top": 20,
+      "bottom": 20,
+      "left": 30,
+      "right": 30
+    }
+  },
+
+  "plugins": [
+    "numbered-headings-for-web-and-books",
+    "uml",
+    "katex"
+  ],
+  "pluginsConfig": {
+    "autocover": {
+      "font": {
+        "size": null,
+        "family": "Meiryo",
+        "color": "#FFF"
+      },
+      "size": {
+        "w": 1800,
+        "h": 2360
+      },
+      "background": {
+         "color": "#09F"
+      }
+    }
+  }
+}
