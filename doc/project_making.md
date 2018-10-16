@@ -20,6 +20,7 @@ $ touch change_log.md
 $ touch project_making.md
 $ mkdir -p ./cmd/gatapi
 $ touch ./cmd/gatapi/main.go
+$ cobra init github.com/c18t/go-app-twitter-api/gatapi
 $ dep init
 ```
 

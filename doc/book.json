@@ -19,7 +19,6 @@
 
   "plugins": [
     "numbered-headings-for-web-and-books",
-    "uml",
     "katex"
   ],
   "pluginsConfig": {

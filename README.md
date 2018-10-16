@@ -27,7 +27,7 @@ Options:
 
 ## Install
 ```sh
-$ go get -u github.com/c18t/go-app-twitter-api/cmd/gatapi
+$ go get -u github.com/c18t/go-app-twitter-api/gatapi
 ```
 
 ## License
