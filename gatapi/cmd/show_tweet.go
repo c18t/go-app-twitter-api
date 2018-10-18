@@ -5,8 +5,15 @@ import (
 
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 )
+
+// ShowTweetParams represents ...
+//   Limit:
+type ShowTweetParams struct {
+	Limit int
+}
+
+var showTweetParams ShowTweetParams
 
 // showTweetCmd represents the show tweet command
 var showTweetCmd = &cobra.Command{
@@ -19,12 +26,12 @@ Show user's user timeline.`,
 
 		// User Timeline
 		tweets, _, _ := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
-			Count: viper.GetInt("Show.Tweet.Limit"),
+			Count: showTweetParams.Limit,
 		})
 
 		fmt.Println("User's USER TIMELINE:")
 		for i := 0; i < len(tweets); i++ {
-			fmt.Printf("@%+v: %+v\n", tweets[i].User.ScreenName, tweets[i].Text)
+			fmt.Printf("[%+v] @%+v: %+v\n", tweets[i].IDStr, tweets[i].User.ScreenName, tweets[i].Text)
 		}
 	},
 }
@@ -40,7 +47,5 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	var limit int
-	showTweetCmd.Flags().IntVarP(&limit, "limit", "l", 20, "tweet count")
-	viper.BindPFlag("Show.Tweet.Limit", showTweetCmd.Flags().Lookup("limit"))
+	showTweetCmd.Flags().IntVarP(&showTweetParams.Limit, "limit", "l", 20, "tweet count")
 }
