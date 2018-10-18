@@ -1,5 +1,10 @@
 # Change Log
 
+**v0.6.0**
+- show profile コマンドを追加
+    - --by-id オプション: screen nameではなく、user idで検索
+- delete, unlike (unf)
+
 **v0.5.0**
 - show home コマンドに下記オプションを追加
     - screen name 引数: ログインユーザー以外のUserTimelineを取得可能にした
