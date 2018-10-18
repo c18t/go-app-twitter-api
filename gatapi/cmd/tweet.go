@@ -76,7 +76,7 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// showCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	tweetCmd.Flags().Int64Var(&tweetParams.ID, "to", 0, "reply to <tweet id>") // (it takes priority of '--to' option)")
+	tweetCmd.Flags().Int64Var(&tweetParams.ID, "id", 0, "reply to <tweet id>") // (it takes priority of '--to' option)")
 	//tweetCmd.Flags().StrVar(&tweetParams.To, "to", nil, "reply to <screen name>")
 	sayCmd.Flags().Int64Var(&sayParams.ID, "id", 0, "reply to <tweet id>") // (it takes priority of '--to' option)")
 	//sayCmd.Flags().StrVar(&sayParams.To, "to", nil, "reply to <screen name>")

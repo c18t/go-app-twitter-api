@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// ShowTweetParams represents ...
+// ShowHomeParams represents ...
 //   Limit:
 type ShowHomeParams struct {
 	Limit int
@@ -47,5 +47,5 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	showTweetCmd.Flags().IntVarP(&showHomeParams.Limit, "limit", "l", 20, "tweet count")
+	showHomeCmd.Flags().IntVarP(&showHomeParams.Limit, "limit", "l", 20, "tweet count")
 }

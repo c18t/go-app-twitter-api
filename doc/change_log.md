@@ -1,5 +1,9 @@
 # Change Log
 
+**v0.3.1**
+- show home コマンドで show tweetコマンドのフラグを再定義する不具合を修正
+- tweet (say) コマンドの --id オプションの名称が誤っていした不具合を修正
+
 **v0.3.0**
 - tweet, say コマンドに --id オプションを追加。リプライ機能
 - like (f), retweet (rt), quote (qt)コマンドを追加
