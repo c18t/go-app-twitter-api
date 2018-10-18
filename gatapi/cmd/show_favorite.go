@@ -7,9 +7,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// ShowTweetParams represents ...
+// ShowFavoriteParams represents ...
 //   Limit:
-type ShowTweetParams struct {
+type ShowFavoriteParams struct {
 	Limit   int
 	Page    int
 	SinceID int64
@@ -17,11 +17,11 @@ type ShowTweetParams struct {
 	Retry   int
 }
 
-var showTweetParams ShowTweetParams
+var showFavoriteParams ShowFavoriteParams
 
-// showTweetCmd represents the show tweet command
-var showTweetCmd = &cobra.Command{
-	Use:   "tweet [<screen name>]",
+// showFavoriteCmd represents the show favorite command
+var showFavoriteCmd = &cobra.Command{
+	Use:   "favorite [<screen name>]",
 	Short: "Show <screen name>'s user timeline",
 	Long: `Gatapi - Go Application for Twitter API. (for study)
 Show <screen name>'s user timeline.`,
@@ -37,13 +37,13 @@ Show <screen name>'s user timeline.`,
 			screenName = args[0]
 		}
 
-		page = showTweetParams.Page
-		retry = showTweetParams.Retry
-		sinceID = showTweetParams.SinceID
-		maxID = showTweetParams.MaxID
+		page = showFavoriteParams.Page
+		retry = showFavoriteParams.Retry
+		sinceID = showFavoriteParams.SinceID
+		maxID = showFavoriteParams.MaxID
 
-		if showTweetParams.Page == 0 {
-			if showTweetParams.SinceID == 0 {
+		if showFavoriteParams.Page == 0 {
+			if showFavoriteParams.SinceID == 0 {
 				// 取得条件の指定がなければ1ページだけ取得
 				page = 1
 			} else {
@@ -54,8 +54,8 @@ Show <screen name>'s user timeline.`,
 
 		for page != 0 && retry > 0 {
 			// User Timeline
-			params := &twitter.UserTimelineParams{
-				Count: showTweetParams.Limit,
+			params := &twitter.FavoriteListParams{
+				Count: showFavoriteParams.Limit,
 			}
 			if screenName != "" {
 				params.ScreenName = screenName
@@ -66,9 +66,9 @@ Show <screen name>'s user timeline.`,
 			if maxID != 0 {
 				params.MaxID = maxID
 			}
-			tweets, _, err := client.Timelines.UserTimeline(params)
+			tweets, _, err := client.Favorites.List(params)
 			if err != nil {
-				fmt.Printf("Show Tweet Error: %+v\n", err)
+				fmt.Printf("Show Favorite Error: %+v\n", err)
 				retry--
 				continue
 			}
@@ -91,7 +91,7 @@ Show <screen name>'s user timeline.`,
 }
 
 func init() {
-	showCmd.AddCommand(showTweetCmd)
+	showCmd.AddCommand(showFavoriteCmd)
 
 	// Here you will define your flags and configuration settings.
 
@@ -101,9 +101,9 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	showTweetCmd.Flags().IntVarP(&showTweetParams.Limit, "limit", "l", 20, "tweet count")
-	showTweetCmd.Flags().IntVarP(&showTweetParams.Page, "page", "p", 0, "page")
-	showTweetCmd.Flags().Int64VarP(&showTweetParams.SinceID, "since-id", "s", 0, "since <tweet id>") // (it takes priority of '--to' option)")
-	showTweetCmd.Flags().Int64VarP(&showTweetParams.MaxID, "max-id", "m", 0, "max <tweet id>")       // (it takes priority of '--to' option)")
-	showTweetCmd.Flags().IntVarP(&showTweetParams.Retry, "retry", "r", 3, "retry count")
+	showFavoriteCmd.Flags().IntVarP(&showFavoriteParams.Limit, "limit", "l", 20, "tweet count")
+	showFavoriteCmd.Flags().IntVarP(&showFavoriteParams.Page, "page", "p", 0, "page")
+	showFavoriteCmd.Flags().Int64VarP(&showFavoriteParams.SinceID, "since-id", "s", 0, "since <tweet id>") // (it takes priority of '--to' option)")
+	showFavoriteCmd.Flags().Int64VarP(&showFavoriteParams.MaxID, "max-id", "m", 0, "max <tweet id>")       // (it takes priority of '--to' option)")
+	showFavoriteCmd.Flags().IntVarP(&showFavoriteParams.Retry, "retry", "r", 3, "retry count")
 }

@@ -1,5 +1,14 @@
 # Change Log
 
+**v0.4.0**
+- show tweet コマンドに下記オプションを追加
+    - screen name 引数: ログインユーザー以外のUserTimelineを取得可能にした
+    - --page オプション: limit数のツイートを page回分取得
+    - --since-id オプション: since-idより新しいツイートまで取得
+    - --max-id オプション: max-idと同じか古いツイートから取得
+    - --retry オプション: 通信エラー時、再チャレンジする回数。初期値 3 回
+- show favorite コマンドを追加
+
 **v0.3.1**
 - show home コマンドで show tweetコマンドのフラグを再定義する不具合を修正
 - tweet (say) コマンドの --id オプションの名称が誤っていした不具合を修正
