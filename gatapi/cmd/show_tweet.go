@@ -101,7 +101,7 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	showTweetCmd.Flags().IntVarP(&showTweetParams.Limit, "limit", "l", 20, "tweet count")
+	showTweetCmd.Flags().IntVarP(&showTweetParams.Limit, "limit", "l", 20, "tweet count (max 200)")
 	showTweetCmd.Flags().IntVarP(&showTweetParams.Page, "page", "p", 0, "page")
 	showTweetCmd.Flags().Int64VarP(&showTweetParams.SinceID, "since-id", "s", 0, "since <tweet id>") // (it takes priority of '--to' option)")
 	showTweetCmd.Flags().Int64VarP(&showTweetParams.MaxID, "max-id", "m", 0, "max <tweet id>")       // (it takes priority of '--to' option)")
