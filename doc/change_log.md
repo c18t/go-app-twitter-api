@@ -1,9 +1,12 @@
 # Change Log
 
+**v0.7.0**
+- show list コマンドを追加
+
 **v0.6.0**
 - show profile コマンドを追加
     - --by-id オプション: screen nameではなく、user idで検索
-- delete, unlike (unf)
+- delete, unlike (unf) コマンドを追加
 
 **v0.5.0**
 - show home コマンドに下記オプションを追加
