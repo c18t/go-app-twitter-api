@@ -1,5 +1,8 @@
 # Change Log
 
+**v0.8.0**
+- list add コマンドを追加
+
 **v0.7.0**
 - show list コマンドを追加
 
