@@ -2,10 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"net/url"
-	"os"
 
-	"github.com/ChimeraCoder/anaconda"
+	"github.com/dghubble/go-twitter/twitter"
 	"github.com/spf13/cobra"
 )
 
@@ -28,39 +26,46 @@ var showListCmd = &cobra.Command{
 	Long: `Gatapi - Go Application for Twitter API. (for study)
 Show <screen name>'s user lists.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		client := getAnacondaClient()
+		client := getTwitterClient()
 
-		var page, retry int
-		var screenName string
+		// var page, retry int
+		// var screenName string
 
-		page = showListParams.Page
+		// page = showListParams.Page
+		var retry int
 		retry = showListParams.Retry
 
 		// <screen name>の指定があれば対象を設定
-		if len(args) > 0 {
-			screenName = args[0]
-		}
+		// params := &twitter.UserShowParams{}
+		// if len(args) > 0 {
+		// 	params.ScreenName = args[0]
+		// }
 
-		user, err := client.GetUsersShow(screenName, nil)
-		if err != nil {
-			fmt.Printf("Show List Error: %+v\n", err)
-			os.Exit(1)
-		}
+		// user, _, err := client.Users.Show(params)
+		// if err != nil {
+		// 	fmt.Printf("Show List Error: %+v\n", err)
+		// 	os.Exit(1)
+		// }
 
-		if page == 0 {
-			// 未指定時は1ページ取得
-			page = 1
-		}
+		// if page == 0 {
+		// 	// 未指定時は1ページ取得
+		// 	page = 1
+		// }
 
-		v := url.Values{}
-		v.Set("count", "200")
-		if screenName != "" {
-			v.Set("screenName", screenName)
-		}
+		// v := url.Values{}
+		// v.Set("count", "200")
+		// if screenName != "" {
+		// 	v.Set("screenName", screenName)
+		// }
 
-		var lists []anaconda.List
+		var lists []twitter.List
+		var err error
 		for retry > 0 {
-			lists, err = client.GetListsOwnedBy(user.Id, v)
+			params := &twitter.ListsListParams{}
+			if len(args) > 0 {
+				params.ScreenName = args[0]
+			}
+			lists, _, err = client.Lists.List(params)
 			if err != nil {
 				fmt.Printf("Show List Error: %+v\n", err)
 				retry--
@@ -70,7 +75,7 @@ Show <screen name>'s user lists.`,
 		}
 
 		for _, list := range lists {
-			fmt.Printf("[%+v] %+v: %+v\n", list.Id, list.Slug, list.Description)
+			fmt.Printf("[%+v] %+v: %+v\n", list.ID, list.Slug, list.Description)
 		}
 
 		// cursor = lists.NextCursor

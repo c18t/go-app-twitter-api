@@ -3,7 +3,9 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
+	"github.com/dghubble/go-twitter/twitter"
 	"github.com/spf13/cobra"
 )
 
@@ -22,15 +24,20 @@ var listAddCmd = &cobra.Command{
 	Long: `Gatapi - Go Application for Twitter API. (for study)
 Add <screen name> to user lists.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		client := getAnacondaClient()
+		client := getTwitterClient()
 
-		list, err := client.AddMultipleUsersToList(args, listAddParams.ListID, nil)
+		params := &twitter.ListsMembersCreateAllParams{
+			ListID:     listAddParams.ListID,
+			ScreenName: strings.Join(args, ","),
+		}
+		_, err := client.Lists.MembersCreateAll(params)
 		if err != nil {
 			fmt.Printf("Add List Member Error: %+v\n", err)
 			os.Exit(1)
 		}
 
-		fmt.Printf("Added List Member to [%+v] %+v: %+v\n", list.Id, list.Slug, list.Description)
+		//fmt.Printf("Added List Member to [%+v] %+v: %+v\n", list.Id, list.Slug, list.Description)
+		fmt.Printf("Added List Member to [%+v]\n", params.ListID)
 	},
 }
 

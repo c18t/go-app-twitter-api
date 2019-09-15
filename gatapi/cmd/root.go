@@ -5,7 +5,6 @@ import (
 	"os"
 	"path"
 
-	"github.com/ChimeraCoder/anaconda"
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 	homedir "github.com/mitchellh/go-homedir"
@@ -79,9 +78,4 @@ func getTwitterClient() *twitter.Client {
 
 	// Twitter client
 	return twitter.NewClient(httpClient)
-}
-
-func getAnacondaClient() *anaconda.TwitterApi {
-	// Twitter client
-	return anaconda.NewTwitterApiWithCredentials(viper.GetString("Key.AccessToken"), viper.GetString("Key.AccessTokenSecret"), viper.GetString("Key.Consumer"), viper.GetString("Key.ConsumerSecret"))
 }

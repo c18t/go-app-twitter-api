@@ -1,5 +1,11 @@
 # Change Log
 
+**v0.8.1**
+- go version 1.11 -> 1.13
+- モジュールの管理を dep から go mod に変更
+- モジュールのバージョンアップ
+- show list, list addコマンドで使用していた anaconda を go-twitter に差し替え
+
 **v0.8.0**
 - list add コマンドを追加
 
@@ -23,7 +29,7 @@
     - --all オプション: friend, followerをすべて取得
     - --as-id オプション: user idの一覧を取得
     - --retry オプション: 通信エラー時、再チャレンジする回数。初期値 3 回
-- show home show tweet, show favorite コマンドの help 中 limit オプションに最大値を記載
+- show home, show tweet, show favorite コマンドの help 中 limit オプションに最大値を記載
 
 **v0.4.0**
 - show tweet コマンドに下記オプションを追加
@@ -36,7 +42,7 @@
 
 **v0.3.1**
 - show home コマンドで show tweetコマンドのフラグを再定義する不具合を修正
-- tweet (say) コマンドの --id オプションの名称が誤っていした不具合を修正
+- tweet (say) コマンドの --id オプションの名称が誤っていた不具合を修正
 
 **v0.3.0**
 - tweet, say コマンドに --id オプションを追加。リプライ機能
