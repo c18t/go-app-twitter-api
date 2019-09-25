@@ -1,5 +1,9 @@
 # Change Log
 
+**v0.9.0**
+- list remove コマンドを追加
+- list member コマンドを追加
+
 **v0.8.1**
 - go version 1.11 -> 1.13
 - モジュールの管理を dep から go mod に変更

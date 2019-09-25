@@ -14,8 +14,10 @@ Usage:
   gatapi (qt | quote) <message> [--id <tweet id>]
   gatapi (f | like) (<tweet id> | --id <tweet id>)
 
-  gatapi show (profile | home | tweet | favorite | friend | follower | list | listed ) [screen name] [-p | --page <n..m>] [-l | -limit <count>]
-  gatapi (list-member | list-subscriber) <screen name>'/'<list-slug> [-p | --page <n..m>] [-l | -limit <count>]
+  gatapi show (profile | home | tweet | favorite | friend | follower | list | listed | list-member | list-subscriber) [screen name] [-p | --page <n..m>] [-l | -limit <count>]
+
+  gatapi list (create | destroy) <list-slug>
+  gatapi list (add | remove) (-l | --list-id <list id>) <screen name> [, <screen name>]*
 
   gatapi (-h | --help)
   gatapi (-v | --version)
